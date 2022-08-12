@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="../../dist/css/styles.css" rel="stylesheet" />
+  </head>
+  <body>
+    <!-- Header -->
+    <header class="header">
+      <div class="header_container">
+        <div class="header_left">
+          <!-- LOGO -->
+          <div class="header_brand">
+            <a href="../../index.html" class="go_home">
+              <div>
+                <span>Ad</span>
+                <span>min</span>
+              </div>
+            </a>
+          </div>
+
+          <button onclick="toggle_nav()" class="menu_icon"></button>
+          <!-- Header Search Form -->
+          <div class="header_search">
+            <button id="search_toggle" class="search_icon"></button>
+            <form id="header_search_form">
+              <button class="search_icon"></button>
+              <input type="search" placeholder="Type here for search..." />
+            </form>
+          </div>
+        </div>
+
+        <div class="header_right">
+          <!-- Header Notifications -->
+          <div>
+            <div id="notifications_button">
+              <button class="notification_icon"></button>
+              <span class="notification_count"><small>4</small> </span>
+            </div>
+            <!-- Profile Options -->
+            <div id="notifications_overlay"></div>
+            <div id="notifications">
+              <p class="noti_title">Notifications</p>
+
+              <button class="noti_button">
+                <p>New user registered!</p>
+                <small>You have 10 unread messages</small>
+              </button>
+
+              <button class="noti_button">
+                <p>New settings</p>
+                <small>There are new setting available</small>
+              </button>
+
+              <button class="noti_button">
+                <p>Updates</p>
+                <small>These are 2 new updates available</small>
+              </button>
+
+              <button class="see_all_noti">See all notifications</button>
+            </div>
+          </div>
+
+          <button onclick="toggle_full_screen()" class="expand_icon"></button>
+
+          <button class="message_icon"></button>
+
+          <!-- Header Profile Image -->
+          <div class="profile_image_wrapper">
+            <button id="header_profile_image">
+              <img
+                src="https://store.bangladeshisoftware.com/public/admin/images/avatar-1.jpg"
+                alt=""
+              />
+            </button>
+
+            <!-- Profile Options -->
+            <div id="profile_options_overlay"></div>
+            <div id="profile_options">
+              <p>
+                <span class="user_icon"></span>
+                <span>Profile</span>
+              </p>
+              <p>
+                <span class="setting_icon"></span>
+                <span>Setting</span>
+              </p>
+              <p>
+                <span class="lock_icon"></span>
+                <span>Lock Screen </span>
+              </p>
+              <p>
+                <span class="logout_icon"></span>
+                <span>Logout</span>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <!-- Header -->
+
+    <!-- Main Content -->
+    <main class="main_content">
+      <!-- Side Navbar Links -->
+      <nav id="side_nav" class="side_nav">
+        <a href="../../index.html">
+          <button class="btn nav_btn">
+            <span class="nav_icon dashboard_icon"> </span>
+            <span class="nav_text">Dashboard</span>
+          </button>
+        </a>
+
+        <a href="../pos/index.html">
+          <button class="btn nav_btn">
+            <span class="nav_icon pos_icon"> </span>
+            <span class="nav_text">POS</span>
+          </button>
+        </a>
+
+        <div class="relative">
+          <button class="btn nav_btn nav_btn_toggler">
+            <span class="nav_icon customer_icon"> </span>
+            <span class="nav_text">Customer</span>
+            <span class="nav_toggle_icon">+</span>
+          </button>
+          <div class="hidden hide_nav_items nav_items">
+            <a href="new.html">
+              <button class="sub_link">Add Customer</button>
+            </a>
+            <a href="all.html">
+              <button class="sub_link">All Customer's</button>
+            </a>
+          </div>
+        </div>
+
+        <div class="relative">
+          <button class="btn nav_btn nav_btn_toggler">
+            <span class="nav_icon seller_icon"> </span>
+            <span class="nav_text">Seller</span>
+            <span class="nav_toggle_icon">+</span>
+          </button>
+          <div class="hidden hide_nav_items nav_items">
+            <a href="../seller/new.html">
+              <button class="sub_link">Add Seller</button>
+            </a>
+            <a href="../seller/all.html">
+              <button class="sub_link">All Seller's</button>
+            </a>
+          </div>
+        </div>
+
+        <div class="relative">
+          <button class="btn nav_btn nav_btn_toggler">
+            <span class="nav_icon category_icon"> </span>
+            <span class="nav_text">Category</span>
+            <span class="nav_toggle_icon">+</span>
+          </button>
+          <div class="hidden hide_nav_items nav_items">
+            <a href="../category/new.html">
+              <button class="sub_link">Add Category</button>
+            </a>
+            <a href="../category/all.html">
+              <button class="sub_link">All Categorie's</button>
+            </a>
+          </div>
+        </div>
+
+        <div class="relative">
+          <button class="btn nav_btn nav_btn_toggler">
+            <span class="nav_icon product_icon"> </span>
+            <span class="nav_text">Product</span>
+            <span class="nav_toggle_icon">+</span>
+          </button>
+          <div class="hidden hide_nav_items nav_items">
+            <a href="../product/new.html">
+              <button class="sub_link">Add Product</button>
+            </a>
+            <a href="../product/all.html">
+              <button class="sub_link">All Products</button>
+            </a>
+          </div>
+        </div>
+
+        <div class="relative">
+          <button class="btn nav_btn nav_btn_toggler">
+            <span class="nav_icon order_icon"> </span>
+            <span class="nav_text">Order</span>
+            <span class="nav_toggle_icon">+</span>
+          </button>
+          <div class="hidden hide_nav_items nav_items">
+            <a href="../order/pending.html">
+              <button class="sub_link">Pending Order's</button>
+            </a>
+            <a href="../order/success.html">
+              <button class="sub_link">Success Order's</button>
+            </a>
+          </div>
+        </div>
+
+        <a href="../setting/index.html">
+          <button class="btn nav_btn">
+            <span class="nav_icon setting_icon2"> </span>
+            <span class="nav_text">Setting</span>
+          </button>
+        </a>
+
+        <!-- Toggle Nav Text -->
+        <div id="toggle_nav_text">
+          <button class="btn">
+            <span class="chevronleft_icon"></span>
+          </button>
+        </div>
+      </nav>
+      <!-- Side Navbar Links -->
+
+      <!-- Page Content -->
+
+      <!-- Page Content -->
+    </main>
+    <!-- Main Content -->
+    <script src="../../dist/js/header.js"></script>
+    <script src="../../dist/js/svg_icons.js"></script>
+    <script src="../../dist/js/sidebar_nav.js"></script>
+    <script src="../../dist/js/customer-new.js"></script>
+  </body>
+</html>
