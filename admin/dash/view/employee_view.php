@@ -1,3 +1,18 @@
+<?php
+
+    $posts = $obj->employee();
+
+    // if(isset($_GET['status'])){
+    //     if($_GET['status']=='delete'){
+    //         $id = $_GET['id'];
+    //         $del_msg = $obj->delete_post($id);
+    //     }
+    // }
+
+
+
+?>
+
 <section class="content_wrapper">
         <!-- Page Details Title -->
         <div class="page_details">
@@ -50,6 +65,12 @@
                         </th>
                         <th class="table_th">
                           <div class="table_th_div">
+                            <span>Email</span>
+                            <span class="sort_icon"></span>
+                          </div>
+                        </th>
+                        <th class="table_th">
+                          <div class="table_th_div">
                             <span>Phone</span>
                             <span class="sort_icon"></span>
                           </div>
@@ -61,91 +82,66 @@
                           </div>
                         </th>
                         <th class="table_th">
-                          <span>Image</span>
-                        </th>
-                        <th class="table_th">
                           <div class="table_th_div">
-                            <span>City</span>
+                            <span>Facebook</span>
                             <span class="sort_icon"></span>
                           </div>
                         </th>
                         <th class="table_th">
-                          <span>Action</span>
+                          <div class="table_th_div">
+                            <span>Github</span>
+                            <span class="sort_icon"></span>
+                          </div>
+                        </th>
+                        <th class="table_th">
+                          <div class="table_th_div">
+                            <span>Type</span>
+                            <span class="sort_icon"></span>
+                          </div>
+                        </th>
+                        <th class="table_th">
+                          <div class="table_th_div">
+                            <span>Photo</span>
+                            <span class="sort_icon"></span>
+                          </div>
+                        </th>
+                        <th class="table_th">
+                          <div class="table_th_div">
+                            <span>Date</span>
+                            <span class="sort_icon"></span>
+                          </div>
+                        </th>
+                        <th class="table_th">
+                          <div class="table_th_div">
+                            <span>Action</span>
+                            <span class="sort_icon"></span>
+                          </div>
                         </th>
                       </tr>
                     </thead>
                     <tbody id="sellers_wrapper" class="text-sm">
+                    <?php
+            while($postdata=mysqli_fetch_assoc($posts)){
+
+             ?>
+
+                <tr>
                         <tr>
-                            <td>sdfdjsfkdsfdkf</td>
-                            <td>sdfdjsfkdsfdkf</td>
-                            <td>sdfdjsfkdsfdkf</td>
-                            <td>sdfdjsfkdsfdkf</td>
-                            <td>sdfdjsfkdsfdkf</td>
+                        <td><?php echo $postdata['emp_name']?></td>
+                        <td><?php echo $postdata['emp_email']?></td>
+                        <td><?php echo $postdata['emp_phone']?></td>
+                        <td><?php echo $postdata['emp_address']?></td>
+                        <td><?php echo $postdata['emp_facebook']?></td>
+                        <td><?php echo $postdata['emp_github']?></td>
+                        <td><?php echo $postdata['emp_type']?></td>
+                        <td><?php echo $postdata['emp_photo']?></td>
+                        <td><?php echo $postdata['date']?></td>
                             <td>
                                 <a href="#">Edit</a> ||
                                 <a href="#">Delete</a>
                             </td>
-                        <tr>
-                            <td>sdfdjsfkdsfdkf</td>
-                            <td>sdfdjsfkdsfdkf</td>
-                            <td>sdfdjsfkdsfdkf</td>
-                            <td>sdfdjsfkdsfdkf</td>
-                            <td>sdfdjsfkdsfdkf</td>
-                            <td>
-                                <a href="#">Edit</a> ||
-                                <a href="#">Delete</a>
-                            </td>
-                        <tr>
-                            <td>sdfdjsfkdsfdkf</td>
-                            <td>sdfdjsfkdsfdkf</td>
-                            <td>sdfdjsfkdsfdkf</td>
-                            <td>sdfdjsfkdsfdkf</td>
-                            <td>sdfdjsfkdsfdkf</td>
-                            <td>
-                                <a href="#">Edit</a> ||
-                                <a href="#">Delete</a>
-                            </td>
-                        <tr>
-                            <td>sdfdjsfkdsfdkf</td>
-                            <td>sdfdjsfkdsfdkf</td>
-                            <td>sdfdjsfkdsfdkf</td>
-                            <td>sdfdjsfkdsfdkf</td>
-                            <td>sdfdjsfkdsfdkf</td>
-                            <td>
-                                <a href="#">Edit</a> ||
-                                <a href="#">Delete</a>
-                            </td>
-                        <tr>
-                            <td>sdfdjsfkdsfdkf</td>
-                            <td>sdfdjsfkdsfdkf</td>
-                            <td>sdfdjsfkdsfdkf</td>
-                            <td>sdfdjsfkdsfdkf</td>
-                            <td>sdfdjsfkdsfdkf</td>
-                            <td>
-                                <a href="#">Edit</a> ||
-                                <a href="#">Delete</a>
-                            </td>
-                        <tr>
-                            <td>sdfdjsfkdsfdkf</td>
-                            <td>sdfdjsfkdsfdkf</td>
-                            <td>sdfdjsfkdsfdkf</td>
-                            <td>sdfdjsfkdsfdkf</td>
-                            <td>sdfdjsfkdsfdkf</td>
-                            <td>
-                                <a href="#">Edit</a> ||
-                                <a href="#">Delete</a>
-                            </td>
-                        <tr>
-                            <td>sdfdjsfkdsfdkf</td>
-                            <td>sdfdjsfkdsfdkf</td>
-                            <td>sdfdjsfkdsfdkf</td>
-                            <td>sdfdjsfkdsfdkf</td>
-                            <td>sdfdjsfkdsfdkf</td>
-                            <td>
-                                <a href="#">Edit</a> ||
-                                <a href="#">Delete</a>
-                            </td>
-                        </tr>
+                          </tr>
+                          <?php }; ?>
                     </tbody>
                   </table>
                 </div>

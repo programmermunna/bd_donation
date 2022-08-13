@@ -1,7 +1,5 @@
 <?php
 
-   // $display_category = $obj->display_category();
-
     if(isset($_POST['add_post'])){
         $msg = $obj->add_post($_POST);
     }
