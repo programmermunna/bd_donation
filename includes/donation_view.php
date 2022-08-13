@@ -4,7 +4,7 @@
         $add_request = $obj->add_request($_POST);
     }
 
-    
+    $posts = $obj->category();
 
 ?>
 
@@ -133,14 +133,10 @@
             <div class="w-full flex flex-col justify-start">
             <label class="mb-1">Donation Cause</label>
             <select name="donation_cause" required id="select_payment_method" class="select">
-              <option>Select</option>
-              <option>1</option>
-              <option>2</option>
-              <option>3</option>
-              <option>4</option>
-              <option>5</option>
-              <option>6</option>
-              <option>Other</option>
+            <?php
+            while($postdata=mysqli_fetch_assoc($posts)){
+              echo "<option>".$postdata['category_name']."</option>";
+            } ?>
             </select>
             </div>
 

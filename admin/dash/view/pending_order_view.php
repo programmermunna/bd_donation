@@ -1,3 +1,11 @@
+<?php
+
+    $posts = $obj->pending_order();
+
+
+
+?>
+
 <section class="content_wrapper">
         <!-- Page Details Title -->
         <div class="page_details">
@@ -50,31 +58,73 @@
                         </th>
                         <th class="table_th">
                           <div class="table_th_div">
-                            <span>Date</span>
+                            <span>Phone</span>
                             <span class="sort_icon"></span>
                           </div>
                         </th>
                         <th class="table_th">
                           <div class="table_th_div">
-                            <span>Quantity</span>
+                            <span>Adress</span>
                             <span class="sort_icon"></span>
                           </div>
                         </th>
                         <th class="table_th">
                           <div class="table_th_div">
-                            <span>Total</span>
+                            <span>Email</span>
                             <span class="sort_icon"></span>
                           </div>
                         </th>
                         <th class="table_th">
                           <div class="table_th_div">
-                            <span>Payment</span>
+                            <span>NID</span>
                             <span class="sort_icon"></span>
                           </div>
                         </th>
                         <th class="table_th">
                           <div class="table_th_div">
-                            <span>Order Status</span>
+                            <span>Amount</span>
+                            <span class="sort_icon"></span>
+                          </div>
+                        </th>
+                        </th>
+                        <th class="table_th">
+                          <div class="table_th_div">
+                            <span>Method</span>
+                            <span class="sort_icon"></span>
+                          </div>
+                        </th>
+                        </th>
+                        <th class="table_th">
+                          <div class="table_th_div">
+                            <span>Method Number</span>
+                            <span class="sort_icon"></span>
+                          </div>
+                        </th>
+                        </th>
+                        <th class="table_th">
+                          <div class="table_th_div">
+                            <span>Transaction ID</span>
+                            <span class="sort_icon"></span>
+                          </div>
+                        </th>
+                        </th>
+                        <th class="table_th">
+                          <div class="table_th_div">
+                            <span>Cause</span>
+                            <span class="sort_icon"></span>
+                          </div>
+                        </th>
+                        </th>
+                        <th class="table_th">
+                          <div class="table_th_div">
+                            <span>Facebook</span>
+                            <span class="sort_icon"></span>
+                          </div>
+                        </th>
+                        </th>
+                        <th class="table_th">
+                          <div class="table_th_div">
+                            <span>Image</span>
                             <span class="sort_icon"></span>
                           </div>
                         </th>
@@ -84,104 +134,29 @@
                       </tr>
                     </thead>
                     <tbody id="orders_wrapper" class="text-sm">
+                    <?php
+                        while($postdata=mysqli_fetch_assoc($posts)){
 
+                        ?>
                     <tr>
-                        <td>skdfjdkfjdkfd</td>
-                        <td>skdfjdkfjdkfd</td>
-                        <td>skdfjdkfjdkfd</td>
-                        <td>skdfjdkfjdkfd</td>
-                        <td>skdfjdkfjdkfd</td>
-                        <td>skdfjdkfjdkfd</td>
+                    <td><?php echo $postdata['dn_name']?></td>
+                    <td><?php echo $postdata['dn_phone']?></td>
+                    <td><?php echo $postdata['dn_address']?></td>
+                    <td><?php echo $postdata['dn_email']?></td>
+                    <td><?php echo $postdata['dn_nid']?></td>
+                    <td><?php echo $postdata['dn_amount']?></td>
+                    <td><?php echo $postdata['dn_method']?></td>
+                    <td><?php echo $postdata['dn_method_number']?></td>
+                    <td><?php echo $postdata['dn_tr_id']?></td>
+                    <td><?php echo $postdata['dn_cause']?></td>
+                    <td><?php echo $postdata['dn_fb']?></td>
+                    <td><?php echo $postdata['dn_img']?></td>
                         <td>
                             <a href="#">Edit</a> ||
                             <a href="#">Delete</a>
                         </td>
                     </tr>
-
-
-                    <tr>
-                        <td>skdfjdkfjdkfd</td>
-                        <td>skdfjdkfjdkfd</td>
-                        <td>skdfjdkfjdkfd</td>
-                        <td>skdfjdkfjdkfd</td>
-                        <td>skdfjdkfjdkfd</td>
-                        <td>skdfjdkfjdkfd</td>
-                        <td>
-                            <a href="#">Edit</a> ||
-                            <a href="#">Delete</a>
-                        </td>
-                    </tr>
-
-
-                    <tr>
-                        <td>skdfjdkfjdkfd</td>
-                        <td>skdfjdkfjdkfd</td>
-                        <td>skdfjdkfjdkfd</td>
-                        <td>skdfjdkfjdkfd</td>
-                        <td>skdfjdkfjdkfd</td>
-                        <td>skdfjdkfjdkfd</td>
-                        <td>
-                            <a href="#">Edit</a> ||
-                            <a href="#">Delete</a>
-                        </td>
-                    </tr>
-
-
-                    <tr>
-                        <td>skdfjdkfjdkfd</td>
-                        <td>skdfjdkfjdkfd</td>
-                        <td>skdfjdkfjdkfd</td>
-                        <td>skdfjdkfjdkfd</td>
-                        <td>skdfjdkfjdkfd</td>
-                        <td>skdfjdkfjdkfd</td>
-                        <td>
-                            <a href="#">Edit</a> ||
-                            <a href="#">Delete</a>
-                        </td>
-                    </tr>
-
-
-                    <tr>
-                        <td>skdfjdkfjdkfd</td>
-                        <td>skdfjdkfjdkfd</td>
-                        <td>skdfjdkfjdkfd</td>
-                        <td>skdfjdkfjdkfd</td>
-                        <td>skdfjdkfjdkfd</td>
-                        <td>skdfjdkfjdkfd</td>
-                        <td>
-                            <a href="#">Edit</a> ||
-                            <a href="#">Delete</a>
-                        </td>
-                    </tr>
-
-
-                    <tr>
-                        <td>skdfjdkfjdkfd</td>
-                        <td>skdfjdkfjdkfd</td>
-                        <td>skdfjdkfjdkfd</td>
-                        <td>skdfjdkfjdkfd</td>
-                        <td>skdfjdkfjdkfd</td>
-                        <td>skdfjdkfjdkfd</td>
-                        <td>
-                            <a href="#">Edit</a> ||
-                            <a href="#">Delete</a>
-                        </td>
-                    </tr>
-
-
-                    <tr>
-                        <td>skdfjdkfjdkfd</td>
-                        <td>skdfjdkfjdkfd</td>
-                        <td>skdfjdkfjdkfd</td>
-                        <td>skdfjdkfjdkfd</td>
-                        <td>skdfjdkfjdkfd</td>
-                        <td>skdfjdkfjdkfd</td>
-                        <td>
-                            <a href="#">Edit</a> ||
-                            <a href="#">Delete</a>
-                        </td>
-                    </tr>
-
+                          <?php } ?>
                     </tbody>
                   </table>
                 </div>

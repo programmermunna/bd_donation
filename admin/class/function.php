@@ -168,6 +168,14 @@
             }
         }
 
+        public function pending_order(){
+            $query = "SELECT * FROM donation";
+            if(mysqli_query($this->conn,$query)){
+                $posts = mysqli_query($this->conn,$query);
+                return $posts ;
+            }
+        }
+
         // public function update_cat($data){
         //     $edit_cat_id = $data['edit_id'];
         //     $edit_cat_name = $data['edit_cat_name'];
