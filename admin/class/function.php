@@ -144,6 +144,29 @@
             }
         }
         
+        public function add_request($data){
+            $name = $data['name'];
+            $phone = $data['phone'];
+            $adress = $data['adress'];
+            $email = $data['email'];
+            $nid = $data['nid'];
+            $amount = $data['amount'];
+            $method = $data['method'];
+            $method_number = $data['method_number'];
+            $tr_id = $data['tr_id'];
+            $donation_cause = $data['donation_cause'];
+            $fb = $data['fb'];
+
+            $profile = $_FILES['file']['name'];
+            $profile_tmp = $_FILES['file']['tmp_name'];
+
+            move_uploaded_file($profile_tmp,'./admin/upload/'.$profile);
+
+            $query = "INSERT INTO donation(dn_name,dn_phone,dn_address,dn_email,dn_nid,dn_amount,dn_method,dn_method_number,dn_tr_id,dn_cause,dn_fb,dn_img) VALUE('$name','$phone','$adress','$email','$nid','$amount','$method','$method_number','$tr_id','$donation_cause','$fb','$profile')";
+            if(mysqli_query($this->conn,$query)){
+                return "Post update successfully! Please refresh your browser!";
+            }
+        }
 
         // public function update_cat($data){
         //     $edit_cat_id = $data['edit_id'];

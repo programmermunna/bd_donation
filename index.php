@@ -1,3 +1,11 @@
+<?php 
+include('admin/class/function.php');
+    $obj = new adminBlog();
+
+    
+?>
+
+
 <?php include('includes/header.php'); ?>
   <!-- Content Above Navbar -->
   <main class="main_column">
