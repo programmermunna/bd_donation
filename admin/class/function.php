@@ -102,20 +102,23 @@
             $email = $data['email'];
             $phone = $data['phone'];
             $address = $data['address'];
+            $nid = $data['nid'];
             $facebook = $data['facebook'];
             $github = $data['github'];
             $type = $data['type'];
+            $salary = $data['salary'];
 
             $profile = $_FILES['file']['name'];
             $profile_tmp = $_FILES['file']['tmp_name'];
 
             move_uploaded_file($profile_tmp,'upload/'.$profile);
 
-            $query = "INSERT INTO employee(emp_name,emp_email,emp_phone,emp_address,emp_facebook,emp_github,emp_type,emp_photo) VALUE('$name','$email','$phone','$address','$facebook','$github','$type','$profile')";
+            $query = "INSERT INTO employee(emp_name,emp_email,emp_phone,emp_address,emp_nid,emp_facebook,emp_github,emp_type,emp_salary,emp_photo) VALUE('$name','$email','$phone','$address','$nid','$facebook','$github','$type','$salary','$profile')";
             if(mysqli_query($this->conn,$query)){
                 return "Post update successfully! Please refresh your browser!";
             }
         }
+
         public function employee(){
             $query = "SELECT * FROM employee";
             if(mysqli_query($this->conn,$query)){
@@ -123,6 +126,24 @@
                 return $posts ;
             }
         }
+        public function add_category($data){
+            $category = $data['category'];
+
+            $query = "INSERT INTO category(category_name) VALUE('$category')";
+            if(mysqli_query($this->conn,$query)){
+                return "Post update successfully! Please refresh your browser!";
+            }
+        }
+
+        
+        public function category(){
+            $query = "SELECT * FROM category";
+            if(mysqli_query($this->conn,$query)){
+                $posts = mysqli_query($this->conn,$query);
+                return $posts ;
+            }
+        }
+        
 
         // public function update_cat($data){
         //     $edit_cat_id = $data['edit_id'];

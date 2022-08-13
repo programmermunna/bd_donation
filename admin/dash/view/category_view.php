@@ -1,3 +1,11 @@
+<?php
+
+    $posts = $obj->category();
+
+
+
+?>
+
 <section class="content_wrapper">
         <!-- Page Details Title -->
         <div class="page_details">
@@ -60,53 +68,20 @@
                       </tr>
                     </thead>
                     <tbody id="category_wrapper" class="text-sm">
+                    <?php
+            while($postdata=mysqli_fetch_assoc($posts)){
+
+             ?>
                       <tr>
-                        <td>category 1</td>
-                        <td>category 2</td>
+                        <td><?php echo $postdata['id']?></td>
+                        <td><?php echo $postdata['category_name']?></td>
                         <td>
                           <a href="#">Edit</a> ||
                           <a href="#">Delete</a>
                         </td>
                       </tr>
 
-                      <tr>
-                        <td>category 1</td>
-                        <td>category 2</td>
-                        <td>
-                          <a href="#">Edit</a> ||
-                          <a href="#">Delete</a>
-                        </td>
-                      </tr>
-                      
-
-                      <tr>
-                        <td>category 1</td>
-                        <td>category 2</td>
-                        <td>
-                          <a href="#">Edit</a> ||
-                          <a href="#">Delete</a>
-                        </td>
-                      </tr>
-                      
-
-                      <tr>
-                        <td>category 1</td>
-                        <td>category 2</td>
-                        <td>
-                          <a href="#">Edit</a> ||
-                          <a href="#">Delete</a>
-                        </td>
-                      </tr>
-                      
-
-                      <tr>
-                        <td>category 1</td>
-                        <td>category 2</td>
-                        <td>
-                          <a href="#">Edit</a> ||
-                          <a href="#">Delete</a>
-                        </td>
-                      </tr>
+                      <?php }?>
                       
                     </tbody>
                   </table>

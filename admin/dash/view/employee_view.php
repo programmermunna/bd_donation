@@ -2,13 +2,6 @@
 
     $posts = $obj->employee();
 
-    // if(isset($_GET['status'])){
-    //     if($_GET['status']=='delete'){
-    //         $id = $_GET['id'];
-    //         $del_msg = $obj->delete_post($id);
-    //     }
-    // }
-
 
 
 ?>
@@ -83,6 +76,12 @@
                         </th>
                         <th class="table_th">
                           <div class="table_th_div">
+                            <span>NID</span>
+                            <span class="sort_icon"></span>
+                          </div>
+                        </th>
+                        <th class="table_th">
+                          <div class="table_th_div">
                             <span>Facebook</span>
                             <span class="sort_icon"></span>
                           </div>
@@ -96,6 +95,12 @@
                         <th class="table_th">
                           <div class="table_th_div">
                             <span>Type</span>
+                            <span class="sort_icon"></span>
+                          </div>
+                        </th>
+                        <th class="table_th">
+                          <div class="table_th_div">
+                            <span>Salary</span>
                             <span class="sort_icon"></span>
                           </div>
                         </th>
@@ -131,10 +136,12 @@
                         <td><?php echo $postdata['emp_email']?></td>
                         <td><?php echo $postdata['emp_phone']?></td>
                         <td><?php echo $postdata['emp_address']?></td>
-                        <td><?php echo $postdata['emp_facebook']?></td>
-                        <td><?php echo $postdata['emp_github']?></td>
+                        <td><?php echo $postdata['emp_nid']?></td>
+                        <td><a href="<?php echo $postdata['emp_facebook']?>"><?php echo $postdata['emp_name']?></a></td>
+                        <td><a href="<?php echo $postdata['emp_github']?>"><?php echo $postdata['emp_name']?></a></td>
                         <td><?php echo $postdata['emp_type']?></td>
-                        <td><?php echo $postdata['emp_photo']?></td>
+                        <td><?php echo $postdata['emp_salary']?></td>
+                        <td><img width='100px' height='50px'  src="./upload/<?php echo $postdata['emp_photo']; ?>" alt="img"></td>
                         <td><?php echo $postdata['date']?></td>
                             <td>
                                 <a href="#">Edit</a> ||

@@ -38,6 +38,10 @@
               <input type="text" name="address" placeholder="Enter Your Address" class="input" />
             </div>
             <div>
+              <label>NID</label>
+              <input type="number" name="nid" placeholder="Enter Your NID no" class="input" />
+            </div>
+            <div>
               <label>Facebook</label>
               <input type="text" name="facebook" placeholder="Account LInk" class="input" />
             </div>
@@ -48,6 +52,10 @@
             <div>
               <label>Type</label>
               <input type="text" name="type" placeholder="Type of Programming" class="input" />
+            </div>
+            <div>
+              <label>Salary</label>
+              <input type="number" name="salary" placeholder="Salary" class="input" />
             </div>
               <label>Photo</label>
               <input type="file" name="file"  placeholder="" />

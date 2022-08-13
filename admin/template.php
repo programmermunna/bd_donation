@@ -14,7 +14,7 @@
     }
 ?>
 
-<?php include('dash/header.php'); ?>
+        <?php include('dash/header.php'); ?>
 
     <!-- Main Content -->
     <main class="w-full flex bg-gray-100">
