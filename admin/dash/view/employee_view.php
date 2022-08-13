@@ -2,6 +2,12 @@
 
     $posts = $obj->employee();
 
+    if(isset($_GET['status'])){
+      if($_GET['status']=='delete'){
+          $id = $_GET['id'];
+          $del_msg = $obj->delete_employee($id);
+      }
+  }
 
 
 ?>
@@ -145,7 +151,7 @@
                         <td><?php echo $postdata['date']?></td>
                             <td>
                                 <a href="#">Edit</a> ||
-                                <a href="#">Delete</a>
+                                <a class="action delete" href="?status=delete&&id=<?php echo $postdata['id']?>">Delete</a>
                             </td>
                           </tr>
                           <?php }; ?>
@@ -164,23 +170,6 @@
                   <button>Next</button>
                 </div>
               </div>
-
-              <!-- Delete Popup -->
-              <div id="delete_popup" style="display: none">
-                <div id="delete_popup_overlay" onclick="cancel_delete()"></div>
-                <div id="delete_popup" class="swing-show">
-                  <span class="exclamation_icon"></span>
-                  <p class="text-xl font-bold">Are you Want to delete?</p>
-                  <small> Once Delete, This will be Permanently Delete! </small>
-                  <div class="delete_popup_btns">
-                    <button class="cancel" onclick="cancel_delete()">
-                      Cancel
-                    </button>
-                    <button class="ok" onclick="confirm_delete()">OK</button>
-                  </div>
-                </div>
-              </div>
-              <!-- Delete Popup -->
             </div>
           </div>
         </section>

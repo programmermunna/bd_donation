@@ -126,12 +126,25 @@
                 return $posts ;
             }
         }
+        
+        public function delete_employee($id){
+            $query = "DELETE FROM employee WHERE id=$id";
+            if(mysqli_query($this->conn,$query)){
+            }
+        }
+
         public function add_category($data){
             $category = $data['category'];
 
             $query = "INSERT INTO category(category_name) VALUE('$category')";
             if(mysqli_query($this->conn,$query)){
                 return "Post update successfully! Please refresh your browser!";
+            }
+        }
+
+        public function delete_category($id){
+            $query = "DELETE FROM category WHERE id=$id";
+            if(mysqli_query($this->conn,$query)){
             }
         }
 
@@ -169,12 +182,34 @@
         }
 
         public function pending_order(){
-            $query = "SELECT * FROM donation";
+            $query = "SELECT * FROM donation WHERE dn_status = 'Pending'";
             if(mysqli_query($this->conn,$query)){
                 $posts = mysqli_query($this->conn,$query);
                 return $posts ;
             }
         }
+
+        public function status_donation($data){
+            $id = $_GET['id'];
+            $status = $_GET['status'];
+            
+            $query = "UPDATE donation SET dn_status = 'Completed' WHERE id = '$id' ";
+
+            if(mysqli_query($this->conn,$query)){
+                return "Post update successfully! Please refresh your browser!";
+            }
+        }
+
+        
+        public function completed_order(){
+            $query = "SELECT * FROM donation WHERE dn_status = 'Completed'";
+            if(mysqli_query($this->conn,$query)){
+                $posts = mysqli_query($this->conn,$query);
+                return $posts ;
+            }
+        }
+
+
 
         // public function update_cat($data){
         //     $edit_cat_id = $data['edit_id'];
