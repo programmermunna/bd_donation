@@ -33,8 +33,22 @@
                                 include("dash/view/add_data_view.php");
                             }elseif($view=="show_data"){
                                 include("dash/view/show_data_view.php");
-                            }elseif($view=="up_expense"){
+                            }elseif($view=="update_expense"){
                                 include("dash/view/update_expense_view.php");
+                            }elseif($view=="add_employee"){
+                                include("dash/view/add_employee_view.php");
+                            }elseif($view=="employee"){
+                                include("dash/view/employee_view.php");
+                            }elseif($view=="add_category"){
+                                include("dash/view/add_category_view.php");
+                            }elseif($view=="category"){
+                                include("dash/view/category_view.php");
+                            }elseif($view=="pending_order"){
+                                include("dash/view/pending_order_view.php");
+                            }elseif($view=="success_order"){
+                                include("dash/view/success_order_view.php");
+                            }elseif($view=="setting"){
+                                include("dash/view/setting_view.php");
                             }
                         }
                         

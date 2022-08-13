@@ -1,7 +1,8 @@
 <?php
 
-$view = "update_expense";
+$view = "category";
 include("template.php");
+
 
 
 ?>

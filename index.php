@@ -9,11 +9,14 @@
       <?php include('includes/side_bar.php'); ?>
 
       <!-- Left Links Column -->
-
-      <!-- Right Content Column  -->
       <?php //include('includes/dashboard_view.php'); ?>
 
+      <!-- Right Content Column  -->
+
       <?php 
+
+
+
       if(isset($view)){
         if($view=="dashboard"){
           include('includes/dashboard_view.php');
@@ -23,12 +26,40 @@
           include("includes/total_donation_view.php");
       }elseif($view=="contact"){
           include("includes/contact_view.php");
+      }else{
+        include("includes/dashboard_view.php");
+        
       }
-    }
+
+      }
+    
     
      ?>
       
 
+      <!-- Right Content Column  -->
+              <?php
+
+        // switch ($view) {
+        //   case "dashboard":
+        //     include('includes/dashboard_view.php');
+        //     break;
+        //   case "index":
+        //     include('includes/dashboard_view.php');
+        //     break;
+        //   case "donation":
+        //     include("includes/donation_view.php");
+        //     break;
+        //   case "total_donation":
+        //     include("includes/total_donation_view.php");
+        //     break;
+        //   case "contact":
+        //     include("includes/contact_view.php");
+        //     break;
+        //   default:
+        //   include('includes/dashboard_view.php');
+        // }
+        ?>
       <!-- Right Content Column  -->
 
     </div>

@@ -1,7 +1,8 @@
 <?php
 
-$view = "update_expense";
+$view = "success_order";
 include("template.php");
+
 
 
 ?>
