@@ -1,3 +1,13 @@
+<?php
+
+    if(isset($_POST['submit'])){
+        $msg = $obj->setting($_POST);
+    }
+
+    $posts = $obj->setting_show();
+
+?>
+
 <section class="content_wrapper">
         <!-- Page Details Title -->
         <div class="page_details">
@@ -8,56 +18,64 @@
           </div>
         </div>
 
+        <?php
+                        while($postdata=mysqli_fetch_assoc($posts)){
+
+                        ?>
+
         <!-- Page Main Content -->
         <div class="add_page_main_content">
           <h1 class="add_page_title">UPDATE COMPANY INFORMATIONS</h1>
-          <form id="setting_form">
+          <form action="" method="POST" enctype="multipart/form-data" id="setting_form">
             <div>
               <label>Company Name</label>
               <input
                 type="text"
-                value="Bangladesh Software Company"
+                name="name"
+                value="<?php echo $postdata['set_name']?>"
                 class="input"
               />
             </div>
             <div>
               <label>Email</label>
-              <input type="text" value="example@gmail.com" class="input" />
+              <input name="email" type="email" value="<?php echo $postdata['set_email']?>" class="input" />
             </div>
             <div>
               <label>Company Phone/Mobile</label>
-              <input type="text" value="+8801700000000" class="input" />
+              <input name="phone" type="number" value="<?php echo $postdata['set_phone']?>" class="input" />
             </div>
 
             <div>
               <label>Company Address</label>
-              <input type="text" value="Dinajpur Bangladesh" class="input" />
+              <input name="adress" type="text" value="<?php echo $postdata['set_adress']?>" class="input" />
             </div>
 
             <div>
               <label>City</label>
-              <input type="text" value="Dinajpur" class="input" />
+              <input name="city" type="text" value="<?php echo $postdata['set_city']?>" class="input" />
             </div>
             <div>
               <label>Country</label>
-              <input type="text" value="Bangladesh" class="input" />
+              <input name="country" type="text" value="<?php echo $postdata['set_country']?>" class="input" />
             </div>
             <div>
               <label>Zip Code</label>
-              <input type="text" value="5200" class="input" />
+              <input name="zip" type="text" value="<?php echo $postdata['set_zip']?>" class="input" />
             </div>
 
             <div>
               <label>Change Photo</label>
-              <input type="file" title="profile" />
+              <input name="file" type="file" title="profile" />
               <img
-                src="https://store.bangladeshisoftware.com/public/admin/images/avatar-1.jpg"
+                src="./upload/<?php echo $postdata['set_img']?>"
                 width="120"
                 height="120"
                 class="object-cover rounded"
               />
             </div>
-            <button class="btn submit_btn" type="submit">Update</button>
+            <input type="submit" name="submit" class="btn submit_btn" value="Update">
           </form>
         </div>
+
+        <?php } ?>
       </section>

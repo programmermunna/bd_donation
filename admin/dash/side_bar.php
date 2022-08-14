@@ -2,7 +2,7 @@
       <!-- Side Navbar Links -->
       <nav id="side_nav" class="side_nav">
         <a href="dashboard.php">
-          <button style="padding: 23px 0 25px 21px;" class="btn nav_btn">
+          <button style="padding: 19px 137px 20px 20px;" class="btn nav_btn">
             <span class="nav_icon dashboard_icon"> </span>
             <span class="nav_text"><a href="dashboard.php">Dashboard</a></span>
           </button>

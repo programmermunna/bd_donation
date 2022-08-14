@@ -209,7 +209,37 @@
             }
         }
 
+        public function setting($data){
+            $name = $data['name'];
+            $email = $data['email'];
+            $phone = $data['phone'];
+            $adress = $data['adress'];
+            $city = $data['city'];
+            $country = $data['country'];
+            $zip = $data['zip'];
+            $id = '1';
 
+            $profile = $_FILES['file']['name'];
+            $profile_tmp = $_FILES['file']['tmp_name'];
+
+            move_uploaded_file($profile_tmp,'upload/'.$profile);
+
+            $query = "UPDATE setting SET set_name = '$name' , set_email = '$email', set_phone = '$phone' , set_adress = '$adress' , set_city = '$city', set_country ='$country', set_zip ='$zip', set_img ='$profile' WHERE id = '$id' ";
+
+           // $query = "INSERT INTO setting(set_name,set_email,set_phone,set_adress,set_city,set_country,set_zip,set_img) VALUE('$name','$email','$phone','$adress','$city','$country','$zip','$profile')";
+           
+            if(mysqli_query($this->conn,$query)){
+                return "Post update successfully! Please refresh your browser!";
+            }
+        }
+
+        public function setting_show(){
+            $query = "SELECT * FROM setting";
+            if(mysqli_query($this->conn,$query)){
+                $posts = mysqli_query($this->conn,$query);
+                return $posts ;
+            }
+        }
 
         // public function update_cat($data){
         //     $edit_cat_id = $data['edit_id'];

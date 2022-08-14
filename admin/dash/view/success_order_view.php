@@ -182,7 +182,19 @@
                     <td><?php echo $postdata['dn_cause']?></td>
                     <td><?php echo $postdata['dn_fb']?></td>
                     <td><?php echo $postdata['dn_img']?></td>
-                    <td><a href=""><?php echo $postdata['dn_status']?></a></td>
+
+
+                          
+                        <th class="table_th">
+                          <div class="table_th_div">
+                            <span><?php echo $postdata['dn_status']?></span>
+                            <span class="sort_icon"></span>
+                          </div>
+                        </th>
+
+
+
+                    <!-- <td><a href=""><?php echo $postdata['dn_status']?></a></td> -->
                         <td>
                             <a class="action delete" href="?status=delete&&id=<?php echo $postdata['id']?>">Delete</a> 
                         </td>
