@@ -45,31 +45,6 @@ include('admin/class/function.php');
      ?>
       
 
-      <!-- Right Content Column  -->
-              <?php
-
-        // switch ($view) {
-        //   case "dashboard":
-        //     include('includes/dashboard_view.php');
-        //     break;
-        //   case "index":
-        //     include('includes/dashboard_view.php');
-        //     break;
-        //   case "donation":
-        //     include("includes/donation_view.php");
-        //     break;
-        //   case "total_donation":
-        //     include("includes/total_donation_view.php");
-        //     break;
-        //   case "contact":
-        //     include("includes/contact_view.php");
-        //     break;
-        //   default:
-        //   include('includes/dashboard_view.php');
-        // }
-        ?>
-      <!-- Right Content Column  -->
-
     </div>
   </main>
 
